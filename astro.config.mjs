@@ -17,7 +17,8 @@ import svelte from "@astrojs/svelte";
 import swup from '@swup/astro';
 import sitemap from '@astrojs/sitemap';
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
-import cloudflare from "@astrojs/cloudflare";
+
+
 const oklchToHex = str => {
   const DEFAULT_HUE = 250;
   const regex = /-?\d+(\.\d+)?/g;
@@ -105,10 +106,4 @@ export default defineConfig({
       }
     }
   },
-  output: "server",
-  adapter: cloudflare({
-    platformProxy: {
-      enabled: true,
-    },
-  }),
 });
